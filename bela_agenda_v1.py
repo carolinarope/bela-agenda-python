@@ -21,7 +21,7 @@ def adicionar_usuario(nome,email,telefone):
 
 
     usuarios.append(novo_usuario)
-    print ("Usuário cadastrado com sucesso!")
+    print ("\033[32mUsuário cadastrado com sucesso!\033[m")
 
 
 def menu():
