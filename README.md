@@ -1,23 +1,24 @@
 # 💇‍♀️ Bela Agenda — Sistema de Gestão para Salões
 
-O **Bela Agenda** é um projeto desenvolvido em Python com o objetivo de simular um sistema de gestão para salões de beleza.
+Projeto desenvolvido em Python para simular um sistema de gestão
+de clientes, serviços e agendamentos para salões de beleza.
 
-O projeto está sendo desenvolvido de forma **incremental**, começando pela construção da lógica com Python e evoluindo posteriormente para Programação Orientada a Objetos (POO), banco de dados SQL e interface gráfica.
-
----
+O projeto está sendo desenvolvido de forma incremental, acompanhando
+minha evolução em desenvolvimento backend com Python.
 
 ## 🎯 Objetivo
 
-Desenvolver um sistema capaz de gerenciar:
+Construir uma aplicação prática para gerenciamento de:
 
-- Usuários/clientes
+- Clientes
 - Serviços
 - Agendamentos
 - Validação de dados
 - Persistência das informações
 
-A proposta é construir a aplicação por etapas, fortalecendo primeiro a lógica de programação e as regras de negócio antes da evolução da arquitetura.
-
+O projeto evolui progressivamente de uma implementação baseada em
+funções e estruturas de dados para uma arquitetura utilizando
+Programação Orientada a Objetos, APIs e banco de dados.
 ---
 
 ## 🛠️ Tecnologias utilizadas
@@ -91,33 +92,41 @@ O sistema possui um menu interativo no terminal com as seguintes opções:
 
 ---
 
-## 🧠 Conceitos praticados
+## 🛠️ Tecnologias e conceitos
 
-Durante o desenvolvimento da V2 foram praticados conceitos fundamentais de Python:
-
-- Criação e reutilização de funções
-- Parâmetros e argumentos
-- Retorno múltiplo com `return`
-- Tuplas
-- `if`, `elif` e `else`
-- `for` e `while`
+- Python
+- Programação estruturada
+- Funções
+- Estruturas condicionais
+- Laços de repetição
 - Listas e dicionários
-- Métodos de strings
-- `try` e `except`
-- Manipulação de arquivos
-- Serialização com JSON
-- Validação de entradas
-- Organização modular do código
-
+- Programação Orientada a Objetos (em evolução)
+- Validação de dados
+- Tratamento de exceções
+- JSON
+- datetime
+- Git
+- GitHub
 ---
 
 ## 🗺️ Roadmap
 
-- **Fase 0 — Fundamentos:** Estruturas de dados, funções, menu e persistência JSON — ✅ Concluído
-- **Fase 1 — Validações:** Validação de e-mail, telefone, data, hora e duplicidade — ✅ Concluído
-- **Fase 2 — POO:** Refatoração do sistema utilizando classes, encapsulamento, herança e polimorfismo — 🔜 Próxima etapa
-- **Fase 3 — Banco de Dados:** Integração com banco de dados relacional e SQL
-- **Fase 4 — Interface:** Desenvolvimento de interface gráfica e expansão das regras de negócio
+- **Fase 1 — Fundamentos Python:** lógica, estruturas de dados,
+  funções e persistência JSON — ✅ Concluído
+
+- **Fase 2 — Validações:** validação de e-mail, telefone, data,
+  hora e entradas — ✅ Concluído
+
+- **Fase 3 — POO:** refatoração utilizando classes, encapsulamento,
+  herança e polimorfismo — 🔜 Próxima etapa
+
+- **Fase 4 — APIs:** HTTP, REST e desenvolvimento de APIs com Python
+
+- **Fase 5 — Banco de Dados:** SQL e integração com banco relacional
+
+- **Fase 6 — Testes:** testes automatizados e qualidade de código
+
+- **Fase 7 — Docker:** containerização da aplicação
 
 ---
 
