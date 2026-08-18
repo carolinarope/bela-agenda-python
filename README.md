@@ -140,4 +140,4 @@ Posteriormente, o sistema será integrado a um banco de dados relacional utiliza
 
 ## 👩‍💻 Projeto em desenvolvimento
 
-Projeto desenvolvido como parte da minha evolução prática em **Python, desenvolvimento de software e análise de dados**.
+Projeto desenvolvido como parte da minha evolução prática em **Python e desenvolvimento de software backend**.
