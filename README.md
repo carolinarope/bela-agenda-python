@@ -1,134 +1,75 @@
 # 💇‍♀️ Bela Agenda — Sistema de Gestão para Salões
 
-O **Bela Agenda** é um projeto desenvolvido em Python com o objetivo de simular um sistema de gestão para salões de beleza.
+Projeto desenvolvido em Python para simular um sistema de gestão de clientes, serviços e agendamentos para salões de beleza.
 
-O projeto está sendo desenvolvido de forma **incremental**, começando pela construção da lógica com Python e evoluindo posteriormente para Programação Orientada a Objetos (POO), banco de dados SQL e interface gráfica.
+O projeto está sendo desenvolvido de forma incremental, acompanhando minha evolução em desenvolvimento backend com Python. A aplicação evolui progressivamente de uma implementação baseada em funções soltas para uma arquitetura utilizando Programação Orientada a Objetos (POO).
 
 ---
 
 ## 🎯 Objetivo
 
-Desenvolver um sistema capaz de gerenciar:
-
-- Usuários/clientes
-- Serviços
-- Agendamentos
-- Validação de dados
+Construir uma aplicação prática para gerenciamento de:
+- Usuários/Clientes
+- Serviços oferecidos
+- Agendamentos integrados
+- Validação de regras de negócio
 - Persistência das informações
 
-A proposta é construir a aplicação por etapas, fortalecendo primeiro a lógica de programação e as regras de negócio antes da evolução da arquitetura.
+---
+
+## 🚧 Versão atual — V3: Programação Orientada a Objetos (POO)
+
+Nesta versão, a arquitetura do sistema foi completamente refatorada. Saímos de uma estrutura baseada em funções e dicionários soltos para uma modelagem robusta utilizando Classes e Objetos.
+
+### 🧩 Classes Implementadas
+- `BelaAgenda`: Classe gerenciadora principal ("cérebro" do sistema), responsável por instanciar objetos, cruzar dados e executar validações encapsuladas.
+- `Usuario`: Molde de entidade para armazenar os dados e IDs dos clientes.
+- `Servico`: Molde de entidade que define nome, duração e preço dos tratamentos.
+- `Agendamento`: Classe que utiliza **Composição** para relacionar o ID de um Usuário ao ID de um Serviço, gerando um status de marcação.
+
+### 💾 Persistência Avançada em JSON
+Os dados continuam sendo salvos nos arquivos `usuarios.json`, `servicos.json` e `agendamentos.json`, mas agora o sistema utiliza técnicas avançadas como:
+- Uso do atributo mágico `__dict__` para serializar os objetos.
+- Desempacotamento de dicionários (`**kwargs`) para recriar objetos na leitura.
+- *List Comprehension* para otimização do fluxo de salvamento.
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+## ✅ Versões Anteriores (Legado)
 
-- Python
-- JSON
-- `datetime`
-- Estruturas de dados (`list` e `dict`)
-- Funções
-- Estruturas condicionais
-- Laços de repetição
-- Validação e tratamento de entradas
+### V2: Validações de Entrada
+- **E-mail:** Verificação de formatação, regras de `@` e `.` e bloqueio de duplicidade.
+- **Telefone:** Tratamento de strings (remoção de hífens) e limitação a 10 ou 11 dígitos.
+- **Data e Hora:** Validação estrita de calendário usando a biblioteca `datetime`.
+- **Tratamento de Exceções:** Uso de `try/except` para bloquear quebras de sistema (ValueError) em menus numéricos.
 
 ---
 
-## 🚧 Versão atual — V2: Validações
+## 🛠️ Tecnologias e Conceitos Aplicados
 
-Nesta versão, o sistema evoluiu da estrutura básica para uma aplicação com **validação de dados de entrada**.
-
-### ✅ Validações implementadas
-
-#### 📧 E-mail
-- Verificação da presença de `@`
-- Verificação de apenas um `@`
-- Separação entre usuário e domínio
-- Verificação de e-mail incompleto
-- Verificação da presença de `.` no domínio
-- Verificação de e-mail duplicado
-
-#### 📱 Telefone
-- Remoção de espaços e hífens
-- Verificação se contém apenas números
-- Validação do tamanho do telefone (10 ou 11 dígitos)
-
-#### 📅 Data
-- Validação do formato `DD/MM/AAAA`
-- Verificação de datas inválidas utilizando `datetime`
-
-#### ⏰ Hora
-- Validação do formato `HH:MM`
-- Verificação de horários inválidos
-
-### 💾 Persistência
-
-Os dados podem ser:
-
-- Salvos em arquivos JSON
-- Carregados posteriormente através do sistema
-
-Arquivos utilizados:
-
-- `usuarios.json`
-- `servicos.json`
-- `agendamentos.json`
+- Python (Fundamentos e POO)
+- Classes, Objetos, Atributos e Métodos
+- Composição entre classes
+- Tratamento de exceções (`try/except`)
+- Listas, Dicionários e *List Comprehension*
+- Biblioteca `json` para persistência
+- Biblioteca `datetime` para formatação temporal
+- Formatação de terminal com a biblioteca `rich`
+- Git & GitHub (Controle de versionamento)
 
 ---
 
-## 🖥️ Funcionalidades atuais
+## 🗺️ Roadmap de Evolução
 
-O sistema possui um menu interativo no terminal com as seguintes opções:
-
-1. Adicionar usuário
-2. Listar usuários
-3. Adicionar serviço
-4. Listar serviços
-5. Criar agendamento
-6. Listar agendamentos por data
-7. Salvar dados em JSON
-8. Carregar dados de JSON
-9. Sair
+- **Fase 1 — Fundamentos:** Estruturas de dados, funções e menu interativo — ✅ Concluído
+- **Fase 2 — Validações:** Tratamento de erros, formatação de e-mail/telefone/datas — ✅ Concluído
+- **Fase 3 — POO:** Refatoração da arquitetura para Classes e Objetos — ✅ Concluído
+- **Fase 4 — Integridade e Relacionamento:** Aprimorar a busca de objetos e travas de segurança entre agendamentos — 🔜 Próxima etapa
+- **Fase 5 — Banco de Dados:** SQL e integração com banco relacional (MySQL).
+- **Fase 6 — APIs:** HTTP, REST e desenvolvimento de APIs com Python.
 
 ---
 
-## 🧠 Conceitos praticados
+## 👩‍💻 Sobre a Desenvolvedora
 
-Durante o desenvolvimento da V2 foram praticados conceitos fundamentais de Python:
-
-- Criação e reutilização de funções
-- Parâmetros e argumentos
-- Retorno múltiplo com `return`
-- Tuplas
-- `if`, `elif` e `else`
-- `for` e `while`
-- Listas e dicionários
-- Métodos de strings
-- `try` e `except`
-- Manipulação de arquivos
-- Serialização com JSON
-- Validação de entradas
-- Organização modular do código
-
----
-
-## 🗺️ Roadmap
-
-- **Fase 0 — Fundamentos:** Estruturas de dados, funções, menu e persistência JSON — ✅ Concluído
-- **Fase 1 — Validações:** Validação de e-mail, telefone, data, hora e duplicidade — ✅ Concluído
-- **Fase 2 — POO:** Refatoração do sistema utilizando classes, encapsulamento, herança e polimorfismo — 🔜 Próxima etapa
-- **Fase 3 — Banco de Dados:** Integração com banco de dados relacional e SQL
-- **Fase 4 — Interface:** Desenvolvimento de interface gráfica e expansão das regras de negócio
-
----
-
-## 📌 Próximos passos
-
-A próxima evolução do projeto será a refatoração da aplicação para **Programação Orientada a Objetos (POO)**, substituindo gradualmente a estrutura baseada apenas em funções e dicionários por classes e objetos.
-
-Posteriormente, o sistema será integrado a um banco de dados relacional utilizando SQL.
-
----
-
-## 👩‍💻 Projeto em desenvolvimento
-
-Projeto desenvolvido como parte da minha evolução prática em **Python, desenvolvimento de software e análise de dados**.
+Projeto desenvolvido como parte da minha trilha de estudos práticos e evolução técnica em **Python, Arquitetura de Software e Desenvolvimento Backend**.
