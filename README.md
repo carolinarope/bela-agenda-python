@@ -1,75 +1,73 @@
-# 💇‍♀️ Bela Agenda — Sistema de Gestão para Salões
+# Bela Agenda — Sistema de Gestão para Salões (Python)
 
-Projeto desenvolvido em Python para simular um sistema de gestão de clientes, serviços e agendamentos para salões de beleza.
+Projeto pessoal desenvolvido em Python para praticar a construção de um sistema de gestão de clientes, serviços e agendamentos para salões de beleza.
 
-O projeto está sendo desenvolvido de forma incremental, acompanhando minha evolução em desenvolvimento backend com Python. A aplicação evolui progressivamente de uma implementação baseada em funções soltas para uma arquitetura utilizando Programação Orientada a Objetos (POO).
+O projeto foi evoluído em etapas. Começou com uma estrutura procedural e, posteriormente, passou por uma refatoração para Programação Orientada a Objetos (POO). O repositório registra esse processo de aprendizagem.
 
----
+## Objetivo
 
-## 🎯 Objetivo
+Praticar a implementação de funcionalidades comuns em um sistema de agendamentos:
 
-Construir uma aplicação prática para gerenciamento de:
-- Usuários/Clientes
-- Serviços oferecidos
-- Agendamentos integrados
-- Validação de regras de negócio
-- Persistência das informações
+- Cadastro e listagem de clientes.
+- Cadastro e listagem de serviços.
+- Criação e consulta de agendamentos.
+- Validação de entradas.
+- Persistência e recuperação de dados.
 
----
+## Versão documentada — V3: POO
 
-## 🚧 Versão atual — V3: Programação Orientada a Objetos (POO)
+A versão V3 organiza responsabilidades em classes:
 
-Nesta versão, a arquitetura do sistema foi completamente refatorada. Saímos de uma estrutura baseada em funções e dicionários soltos para uma modelagem robusta utilizando Classes e Objetos.
+- `BelaAgenda`: coordena as operações do sistema.
+- `Usuario`: representa os dados de um cliente.
+- `Servico`: representa um serviço oferecido.
+- `Agendamento`: representa a relação entre cliente e serviço, incluindo informações do agendamento.
 
-### 🧩 Classes Implementadas
-- `BelaAgenda`: Classe gerenciadora principal ("cérebro" do sistema), responsável por instanciar objetos, cruzar dados e executar validações encapsuladas.
-- `Usuario`: Molde de entidade para armazenar os dados e IDs dos clientes.
-- `Servico`: Molde de entidade que define nome, duração e preço dos tratamentos.
-- `Agendamento`: Classe que utiliza **Composição** para relacionar o ID de um Usuário ao ID de um Serviço, gerando um status de marcação.
+A aplicação utiliza métodos e atributos para organizar os dados e as operações, além de persistir informações localmente em arquivos JSON.
 
-### 💾 Persistência Avançada em JSON
-Os dados continuam sendo salvos nos arquivos `usuarios.json`, `servicos.json` e `agendamentos.json`, mas agora o sistema utiliza técnicas avançadas como:
-- Uso do atributo mágico `__dict__` para serializar os objetos.
-- Desempacotamento de dicionários (`**kwargs`) para recriar objetos na leitura.
-- *List Comprehension* para otimização do fluxo de salvamento.
+### Persistência
 
----
+Os dados são armazenados em arquivos JSON. A implementação trabalha com conversão entre objetos e dicionários para salvar e reconstruir os registros quando a aplicação é iniciada.
 
-## ✅ Versões Anteriores (Legado)
+## Etapas anteriores
 
-### V2: Validações de Entrada
-- **E-mail:** Verificação de formatação, regras de `@` e `.` e bloqueio de duplicidade.
-- **Telefone:** Tratamento de strings (remoção de hífens) e limitação a 10 ou 11 dígitos.
-- **Data e Hora:** Validação estrita de calendário usando a biblioteca `datetime`.
-- **Tratamento de Exceções:** Uso de `try/except` para bloquear quebras de sistema (ValueError) em menus numéricos.
+### V2 — Validações e persistência
 
----
+- Validação de formato de e-mail e verificação de duplicidade.
+- Validação de telefone.
+- Validação de datas com `datetime`.
+- Validação de horários.
+- Tratamento de entradas numéricas com exceções.
+- Salvamento e carregamento de dados em JSON.
 
-## 🛠️ Tecnologias e Conceitos Aplicados
+### V1 — Fundamentos
 
-- Python (Fundamentos e POO)
-- Classes, Objetos, Atributos e Métodos
-- Composição entre classes
-- Tratamento de exceções (`try/except`)
-- Listas, Dicionários e *List Comprehension*
-- Biblioteca `json` para persistência
-- Biblioteca `datetime` para formatação temporal
-- Formatação de terminal com a biblioteca `rich`
-- Git & GitHub (Controle de versionamento)
+A primeira etapa foi utilizada para praticar lógica, funções, estruturas de dados e navegação por menus.
 
----
+## Tecnologias e conceitos praticados
 
-## 🗺️ Roadmap de Evolução
+- Python
+- Funções e modularização
+- Classes e objetos
+- Encapsulamento e composição
+- Listas e dicionários
+- Validação de dados
+- Tratamento de exceções
+- JSON e manipulação de arquivos
+- `datetime`
+- Git e GitHub
 
-- **Fase 1 — Fundamentos:** Estruturas de dados, funções e menu interativo — ✅ Concluído
-- **Fase 2 — Validações:** Tratamento de erros, formatação de e-mail/telefone/datas — ✅ Concluído
-- **Fase 3 — POO:** Refatoração da arquitetura para Classes e Objetos — ✅ Concluído
-- **Fase 4 — Integridade e Relacionamento:** Aprimorar a busca de objetos e travas de segurança entre agendamentos — 🔜 Próxima etapa
-- **Fase 5 — Banco de Dados:** SQL e integração com banco relacional (MySQL).
-- **Fase 6 — APIs:** HTTP, REST e desenvolvimento de APIs com Python.
+## Como executar
 
----
+1. Clone o repositório.
+2. Abra a pasta do projeto em sua IDE.
+3. Verifique as dependências utilizadas nos arquivos do projeto.
+4. Execute o arquivo principal da versão desejada.
 
-## 👩‍💻 Sobre a Desenvolvedora
+## Próximas melhorias
 
-Projeto desenvolvido como parte da minha trilha de estudos práticos e evolução técnica em **Python, Arquitetura de Software e Desenvolvimento Backend**.
+As próximas etapas podem incluir regras mais completas de integridade dos agendamentos, integração com banco de dados relacional e exposição de funcionalidades por API. Esses itens são possibilidades de evolução, não funcionalidades já concluídas nesta versão.
+
+## Sobre o projeto
+
+Este é um projeto de estudo e portfólio pessoal. Seu propósito é demonstrar a evolução prática em Python e a aplicação gradual de conceitos de desenvolvimento de software.
