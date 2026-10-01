@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Arquivos locais de dados da Bela Agenda (podem conter dados pessoais)
+usuarios.json
+servicos.json
+agendamentos.json
