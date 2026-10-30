@@ -1,132 +1,76 @@
-# Bela Agenda — gestão de salão de beleza
+# Bela Agenda — agendamentos para salões de beleza
 
-> **Projeto pessoal em desenvolvimento — produto autoral de Carolina Rodrigues.**  
-> Uma solução que estou construindo para organizar clientes, serviços e agendamentos de salões de beleza, começando por uma aplicação desktop e com visão de expansão futura para outras plataformas.
+**Projeto Integrador do Técnico em Desenvolvimento de Sistemas — Senac, com tema escolhido por Carolina Rodrigues.**
 
-A Bela Agenda não é apenas um exercício isolado de programação: é meu projeto pessoal de produto. A ideia é desenvolver, testar e evoluir uma solução para uma necessidade concreta de gestão de pequenos negócios de beleza. O sistema ainda está em desenvolvimento e as funcionalidades descritas abaixo correspondem às versões de estudo disponíveis neste repositório — não a um produto comercial já lançado.
+Escolhi desenvolver a Bela Agenda para organizar clientes, serviços e agendamentos de salões de beleza. A primeira etapa acadêmica foi dedicada à estrutura do banco de dados e aos requisitos do sistema.
 
-## Visão do produto
+Como já estudava Python, implementei uma versão inicial nessa linguagem para praticar programação enquanto avançava nos estudos de Java. Este repositório reúne essa evolução em Python.
 
-Meu objetivo é construir a Bela Agenda gradualmente, mantendo uma identidade única para o produto enquanto evoluo sua arquitetura e suas tecnologias.
+## Versão disponível: Python no terminal
 
-**Caminho planejado:**
+A V3, em [`bela_agenda_v3.py`](bela_agenda_v3.py), utiliza orientação a objetos e um menu no terminal com Rich.
 
-1. **Base atual em Python:** consolidar regras de negócio, cadastros, validações e persistência.
-2. **Próxima entrega — aplicação desktop:** transformar a experiência atual de terminal em uma interface gráfica desktop, tornando o uso mais próximo da rotina de um salão.
-3. **Evolução da arquitetura:** estruturar melhor as camadas da aplicação, integrar um banco de dados relacional e separar interface, regras de negócio e persistência.
-4. **Migração planejada para Java:** reimplementar gradualmente a solução em Java, preservando os requisitos e as regras de negócio da Bela Agenda. Essa etapa faz parte da minha estratégia de evolução e de preparação para integrações futuras com outras interfaces e aplicações.
-5. **Visão de longo prazo — aplicativo:** estudar a expansão para uma experiência mobile e outras formas de acesso ao sistema.
+| Classe | Responsabilidade |
+|---|---|
+| `BelaAgenda` | Manter listas, realizar cadastros, validações e persistência |
+| `Usuario` | Representar os dados de uma pessoa cliente |
+| `Servico` | Representar nome, duração e preço de um serviço |
+| `Agendamento` | Relacionar os IDs de cliente e serviço com data, hora e status |
 
-A migração para Java e a futura versão em aplicativo são planos de evolução, não funcionalidades já entregues. A prioridade é construir uma base consistente e validar cada etapa antes de avançar.
+### Funcionalidades atuais
 
-## O que existe no repositório hoje
-
-O repositório registra a evolução do projeto em Python, desde uma primeira estrutura procedural até uma versão organizada em classes.
-
-### V3 — estrutura orientada a objetos
-
-Arquivo: `bela_agenda_v3.py`
-
-A versão atual em destaque trabalha com as classes:
-
-- `BelaAgenda`: concentra operações de cadastro, validação, listagem e persistência.
-- `Usuario`: representa os dados de uma pessoa cliente.
-- `Servico`: representa um serviço oferecido pelo salão.
-- `Agendamento`: registra cliente, serviço, data, horário e status por meio dos identificadores correspondentes.
-
-Funcionalidades presentes no código:
-
-- Cadastro e listagem de usuários.
-- Validação básica de e-mail e verificação de e-mail já cadastrado.
-- Validação de telefone com 10 ou 11 dígitos.
-- Cadastro e listagem de serviços.
-- Validação de duração do serviço.
-- Validação de data e hora com `datetime`.
-- Criação e listagem de agendamentos.
-- Persistência local em arquivos JSON.
-- Carregamento dos registros ao iniciar a aplicação.
-- Menu interativo executado no terminal, com mensagens formatadas usando Rich.
-
-**Importante sobre o estágio atual:** a V3 é uma aplicação de terminal (CLI). A interface desktop é a próxima direção de desenvolvimento; ela ainda não está implementada nesta versão.
-
-### V2 — validações e persistência
-
-Arquivo: `bela_agenda_v2.py`
-
-Nesta etapa, pratiquei:
-
-- Validação de e-mail e verificação de duplicidade.
-- Validação de telefone.
-- Validação de data e horário com `datetime`.
-- Tratamento de entradas numéricas.
 - Cadastro e listagem de usuários e serviços.
+- Validação básica de e-mail e verificação de duplicidade.
+- Validação de telefone com 10 ou 11 dígitos.
+- Validação de duração positiva e formato de data/hora.
 - Criação e consulta de agendamentos.
-- Salvamento e carregamento de dados em JSON.
+- Salvamento e carregamento de registros em arquivos JSON locais.
+- Menu interativo no terminal.
 
-### Evolução desde a primeira versão
+O salvamento é solicitado ao sair do menu. A versão atual ainda precisa de melhorias na verificação dos IDs dos agendamentos, nas regras de conflito de horários e na validação dos serviços.
 
-A primeira etapa foi voltada aos fundamentos de Python, lógica, funções, estruturas de dados e menus. As versões seguintes foram acrescentando validações, persistência e organização do código.
+## Evolução registrada
 
-## Tecnologias e conceitos praticados
+| Arquivo | Etapa |
+|---|---|
+| [`bela_agenda_v1.py`](bela_agenda_v1.py) | Primeira implementação, com lógica, funções e menu |
+| [`bela_agenda_v2.py`](bela_agenda_v2.py) | Evolução das validações e da persistência |
+| [`bela_agenda_v3.py`](bela_agenda_v3.py) | Organização em classes, validações e JSON |
+| [`requirements.txt`](requirements.txt) | Dependência da versão atual |
 
-- Python
-- Programação Orientada a Objetos (POO)
-- Classes, objetos, atributos e métodos
-- Listas e dicionários
-- Validação de dados
-- Tratamento de exceções
-- Manipulação de arquivos
-- JSON
-- `datetime`
-- Rich para formatação da saída no terminal
+## Como executar
 
-## Como executar a versão atual
-
-É necessário ter Python instalado.
-
-Instale a dependência utilizada pela V3:
-
-```bash
-python -m pip install rich
-```
-
-Clone o repositório:
+Tenha Python 3 instalado. No terminal:
 
 ```bash
 git clone https://github.com/carolinarope/bela-agenda-python.git
 cd bela-agenda-python
-```
-
-Execute a versão orientada a objetos:
-
-```bash
+python -m pip install -r requirements.txt
 python bela_agenda_v3.py
 ```
 
-Para executar a versão anterior:
+Os arquivos JSON são gravados na pasta de execução quando você escolhe salvar os dados. Para experimentar o sistema, utilize dados fictícios.
 
-```bash
-python bela_agenda_v2.py
-```
+## Estudo de API
 
-Os arquivos JSON são criados localmente na pasta de execução quando os dados são salvos.
+Estou estudando **APIs REST, HTTP, GET, POST e JSON**, com a proposta de acrescentar uma pequena API em Flask à versão Python.
 
-## Próximas melhorias planejadas
+Essa extensão é uma etapa de estudo planejada. Quando estiver implementada, as rotas, os comandos de execução e seus limites serão documentados aqui.
 
-- Completar as regras de integridade dos agendamentos, verificando se os IDs de cliente e serviço existem.
-- Validar melhor os dados dos serviços, incluindo preço e campos obrigatórios.
-- Melhorar a organização entre interface, regras de negócio e persistência.
-- Criar uma interface gráfica desktop.
-- Migrar a persistência para um banco de dados relacional.
-- Planejar a migração gradual das regras de negócio para Java.
-- Avaliar uma futura interface mobile/aplicativo.
+## Continuidade do Projeto Integrador: Java e MySQL
 
-A lista representa o planejamento do projeto; os itens ainda não implementados não devem ser entendidos como recursos disponíveis.
+A continuidade da Bela Agenda será em **Java**, conforme as próximas entregas do Projeto Integrador. Pretendo aplicar os conhecimentos praticados no [Cenaflix](https://github.com/carolinarope/Java-projetos-academicos/tree/main/Cenaflix_java_jdbc):
 
-## Sobre a autora
+- Classes para representar os dados e as regras do sistema.
+- Interface gráfica com **Java Swing**.
+- Conexão por **JDBC** e persistência no **MySQL**.
+- Organização entre telas, modelo, acesso a dados e conexão.
+- Publicação do código, da estrutura do banco e das instruções de execução no GitHub.
 
-Sou estudante de Análise e Desenvolvimento de Sistemas e de Desenvolvimento de Sistemas. A Bela Agenda é meu projeto pessoal de longo prazo, no qual pratico programação e transformo aprendizados em etapas de um produto com propósito definido.
+A versão Python é a implementação inicial de aprendizagem. A versão Java será compartilhada conforme o avanço das atividades acadêmicas.
 
-Quero evoluir a solução com responsabilidade: entender os fundamentos, testar as regras, melhorar a experiência de uso e documentar cada etapa. Este repositório acompanha essa construção.
+## Tecnologias da versão atual
 
-**Repositório:** [github.com/carolinarope/bela-agenda-python](https://github.com/carolinarope/bela-agenda-python)
+Python · Orientação a objetos · Listas e dicionários · JSON · datetime · Rich
+
+[Perfil da autora](https://github.com/carolinarope) · [LinkedIn](https://www.linkedin.com/in/carolina-rope/)
