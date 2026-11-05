@@ -51,12 +51,6 @@ python bela_agenda_v3.py
 
 Os arquivos JSON são gravados na pasta de execução quando você escolhe salvar os dados. Para experimentar o sistema, utilize dados fictícios.
 
-## Estudo de API
-
-Estou estudando **APIs REST, HTTP, GET, POST e JSON**, com a proposta de acrescentar uma pequena API em Flask à versão Python.
-
-Essa extensão é uma etapa de estudo planejada. Quando estiver implementada, as rotas, os comandos de execução e seus limites serão documentados aqui.
-
 ## Continuidade do Projeto Integrador: Java e MySQL
 
 A continuidade da Bela Agenda será em **Java**, conforme as próximas entregas do Projeto Integrador. Pretendo aplicar os conhecimentos praticados no [Cenaflix](https://github.com/carolinarope/Java-projetos-academicos/tree/main/Cenaflix_java_jdbc):
