@@ -1,10 +1,6 @@
 # Bela Agenda — agendamentos para salões de beleza
 
-**Projeto Integrador do Técnico em Desenvolvimento de Sistemas — Senac, com tema escolhido por Carolina Rodrigues.**
-
-Escolhi desenvolver a Bela Agenda para organizar clientes, serviços e agendamentos de salões de beleza. A primeira etapa acadêmica foi dedicada à estrutura do banco de dados e aos requisitos do sistema.
-
-Como já estudava Python, implementei uma versão inicial nessa linguagem para praticar programação enquanto avançava nos estudos de Java. Este repositório reúne essa evolução em Python.
+Projeto Integrador para organizar clientes, serviços e agendamentos de salões de beleza. A versão disponível neste repositório funciona no terminal, em Python, e salva os registros em JSON.
 
 ## Versão disponível: Python no terminal
 
